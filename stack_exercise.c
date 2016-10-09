@@ -22,8 +22,11 @@ int in_stack(DynArr * s,char tofind){
      Hint: use another stack to hold elements while you search
      and then restore the initial state of `s`
   */
-
-  return 0;
+	for(int i=0; i<s->size; i++){
+		if(s->data[i] == tofind){
+			return 1;
+		}
+	}return 0;
 }
 
 
@@ -57,6 +60,31 @@ int valid_bracket(char * str){
     valid_bracket("({([]))") returns 0
 
   */
-
-  return 0;
+   	char pair;
+	char temp[strlen(str)];
+       	for(int i=0; i<strlen(str); i++){
+		temp[i] = str[i];
+	}if(strlen(str)%2 != 0)
+	  	return 0; 
+	for(int i=0; i<strlen(str); i++){
+		if(temp[i] == '(')
+	   		pair = ')';
+     		else if(temp[i] == '{')
+   			pair = '}';
+		else if(temp[i] == '[')
+   			pair = ']';
+		else if(temp[i] == ')' || temp[i] == '}' || temp[i] == ']')
+   			return 0;
+		for(int j=strlen(str)-1; j>0; j--){
+			if(temp[j]==pair){
+				if( (j-i) % 2 == 0){	
+				  	return 0;
+				}else{
+					temp[i] = '0';
+					temp[j] = '0';
+					break;
+				}	
+			} 
+		} 		
+	}return 1; 
 }

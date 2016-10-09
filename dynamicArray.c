@@ -230,13 +230,19 @@ void removeAtDynArr(DynArr *v, int idx){
 
 	/* My loop does not execute when idx == size-1
 	 * so I don't have to worry about coping an element outside the array
-	 * into that idx!
+i	 * into that idx!
 	 */
    for(i = idx; i < v->size-1; i++){
       v->data[i] = v->data[i+1];
    }
 
    v->size--;
+
+   // PART I: <if size is 1/3 (or less) the capacity when a element is removed, the capacity is cut in half> 
+
+   if(v->size <= (v->capacity/3)){
+   	v->capacity = v->capacity/2;
+   } 
 
 
 }

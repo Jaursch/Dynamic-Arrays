@@ -47,7 +47,7 @@ int main(int argc, char* argv[]){
     asprintf(&tmp2,"Checking %c",i+'o');
 
     assertTrue(in_stack(d,i+'a'),tmp);
-    assertTrue(!in_stack(d,i+'o'),tmp2);
+    assertTrue(!in_stack(d,i+'o'),tmp2); //shows fake, not actually in array
     check_modified(d);
 
 
