@@ -97,7 +97,7 @@ void _dynArrSetCapacity(DynArr *v, int newCap)
 	oldData = v->data;
 
 	//	printf("========Resizing========\n");
-	/* Create a new dyn array with larger underlying array */
+	/* Creating a new dyn array with larger underlying array */
 	_initDynArr(v, newCap);
 
 	for(i = 0; i < oldCapacity; i++){
@@ -105,7 +105,6 @@ void _dynArrSetCapacity(DynArr *v, int newCap)
 	}
 
 	v->size = oldSize;
-	/* Remember, init did not free the original data */
 	free(oldData);
 }
 
@@ -321,8 +320,6 @@ void popDynArr(DynArr *v)
 
 /*
    Print the dynamic array contents.  This requires that PRINT_STR be defined.
-RAM: Fix this to take a printType function pointer!
-
 */
 void printDynArr(DynArr *v)
 {
