@@ -82,7 +82,6 @@ int main(int argc, char* argv[]){
 	for(int i=0;i<8;i++){
 	  removeAtDynArr(d,0);
 	}
-
 	printDynArr(d);
 	assertTrue((d->capacity)<10, "Test resize");
 
