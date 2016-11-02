@@ -2,7 +2,6 @@
 #ifndef DYNAMIC_ARRAY_INCLUDED
 #define DYNAMIC_ARRAY_INCLUDED 1
 
-/*  RAM: All this type stuff This should go elsewhere! */
 
 # define KT void *
 # define VT void *
